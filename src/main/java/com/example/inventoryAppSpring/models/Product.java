@@ -18,7 +18,4 @@ public class Product {
 
     @Column(name = "PRODUCT_QUANTITy")
     private int productQuantity;
-
-    @Column(name = "DATE_UPDATED")
-    private String dateUpdated;
 }
