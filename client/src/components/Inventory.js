@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import Services from '../Services';
+import Product from './Product';
 
 import Header from './static/Header'
 
@@ -8,8 +10,7 @@ export default class Inventory extends Component {
 		super(props);
 		this.state = {
 			loaded: false,
-			data: null,
-			testData: [1,2,3,4,5]
+			data: null
 		}
 	}
 
@@ -27,20 +28,19 @@ export default class Inventory extends Component {
 	}
 
 	showItems() {
-		return this.state.testData.map(data => {
-			return <p>{data}</p>
+		return this.state.data.map(product => {
+			return <Product key={product.id} product={product} />
 		})
 	}
 
 	render() {
-		{this.state.loaded ? console.log('data loaded' + this.state.data) 
-						   : console.log('no data')}
 		return(
 			<div>
 				<Header />
+				<Link to="/add"><button>Add Product to inventory</button></Link>
 				<h1>Current Inventory</h1>
 				<small>as of {new Date().toDateString()}</small>
-				{this.showItems()}
+				{this.state.loaded ? this.showItems() : ''}
 			</div>
 		)
 	}
