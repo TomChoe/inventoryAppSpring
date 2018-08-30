@@ -14,28 +14,28 @@ public class ProductsController {
     @Autowired
     private ProductRepository productRepository;
 
-    @GetMapping("/products")
+    @GetMapping("/api/products")
     public Iterable<Product> findallProducts() {
         return productRepository.findAll();
     }
 
-    @GetMapping("/products/{productId}")
+    @GetMapping("/api/products/{productId}")
     public Optional<Product> findByProductById(@PathVariable long productId) {
         return productRepository.findById(productId);
     }
 
-    @DeleteMapping("/products/{productId}")
+    @DeleteMapping("/api/products/{productId}")
     public HttpStatus deleteProductById(@PathVariable long productId) {
         productRepository.deleteById(productId);
         return HttpStatus.OK;
     }
 
-    @PostMapping("/products")
+    @PostMapping("/api/products")
     public Product createNewProduct(@RequestBody Product newProduct) {
         return productRepository.save(newProduct);
     }
 
-    @PatchMapping("/products/{productId}")
+    @PatchMapping("/api/products/{productId}")
     public Product updateProductById(@PathVariable Long productId, @RequestBody Product productRequest) {
 
         Product productFromDb = productRepository.findById(productId).get();
