@@ -16,6 +16,7 @@ const Services = {
 	},
 
 	createItem(item) {
+		console.log('Services for creating item -> ', item);
 		return axios({
 			method: "POST",
 			url: "/api/products",

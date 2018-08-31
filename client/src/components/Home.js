@@ -10,7 +10,7 @@ export default class App extends Component {
 				<small>Keep track of inventory</small>
 				<br/>
 				<br/>
-				<button className="btn btn-primary"><Link to="/inventory">Current</Link></button>
+				<button className="btn btn-primary"><Link to="/inventory" className="text-white">Current</Link></button>
 			</div>
 		)
 	}

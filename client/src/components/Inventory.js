@@ -39,7 +39,7 @@ export default class Inventory extends Component {
 				<Header />
 				<Link to="/add"><button>Add Product to inventory</button></Link>
 				<h1>Current Inventory</h1>
-				<small>as of {new Date().toDateString()}</small>
+				<small>as of {new Date().toDateString()}</small><br/><br/>
 				{this.state.loaded ? this.showItems() : ''}
 			</div>
 		)

@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Product = (props) => {
-	console.log('product props', props)
 	return (
 		<div>
 			<h4>
