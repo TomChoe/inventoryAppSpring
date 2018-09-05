@@ -1,3 +1,2 @@
 # inventoryAppSpring
-
-Using the react front end from another repository, the backend REST endpoints will be running on spring containered in Docker.
+React framework to render views to client, the backend REST endpoints will be running on spring-boot containered in Docker.
